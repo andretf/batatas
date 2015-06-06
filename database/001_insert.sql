@@ -1,0 +1,10 @@
+insert into products(numeric_barcode, name, created_at) values ('7896079500151','LEITE LV INTEGRAL ELEGE', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+insert into products(numeric_barcode, name, created_at) values ('7891150006058','SAB DOVE MEN CLEAN CONFORT',  STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+insert into products(numeric_barcode, name, created_at) values ('7896074600993','PAO QUEIJO TRAD F.MINAS 400G', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+insert into products(numeric_barcode, name, created_at) values ('2453390000002','LASANHA MISTA CARNE ZAF', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+insert into products(numeric_barcode, name, created_at) values ('2064770000002','BIFE A PARMEGGIANA ZAF', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+insert into products(numeric_barcode, name, created_at) values ('2073200000000','ARROZ BRANCO COZIDO ZAF', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+insert into products(numeric_barcode, name, created_at) values ('2072070000004','FEIJAO PRETO ZAF', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+insert into products(numeric_barcode, name, created_at) values ('7891022854787','DESINF PINHO BRIL B MAR L500P450', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+insert into products(numeric_barcode, name, created_at) values ('7894650002667','GEL ADESIVO PATO MARINE RF 38G', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW', 'localtime'))
+
