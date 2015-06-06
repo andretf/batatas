@@ -6,12 +6,12 @@ class Item < Sequel::Model
 
   def to_json
     {
-      id: id,
-      name: product.name,
-      ean_code: product.ean_code,
-      amount: amount,
-      bought: bought,
-      listId: list_id
+        id: id,
+        listId: list_id,
+        ean_code: product.ean_code,
+        name: product.name,
+        amount: amount,
+        bought: bought
     }
   end
 

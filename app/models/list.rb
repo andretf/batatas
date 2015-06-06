@@ -3,7 +3,8 @@ class List < Sequel::Model
   one_to_many :list_users
 
   def add(items)
-    [items].flatten.each { |item| add_item(from_json(item)) }
+    items = [items].flatten
+    items.each { |item| add_item(from_json(item)) }
     save
   end
 
@@ -27,12 +28,8 @@ class List < Sequel::Model
   def from_json(item)
     record = Product.find_or_create(:name => item['name'],
                                     :ean_code => item['ean_code'])
-    options = {
-      product_id: record[:id],
-      amount: item['amount']
-    }
+    options = {product_id: record[:id], amount: item['amount']}
     options[:bought] = item['bought'] if item['bought']
-
     options
   end
 end
