@@ -1,5 +1,5 @@
 class Product < Sequel::Model
-  Sequel::Model.plugin :json_serializer
+  one_to_many :items
 
   def self.with_name name
     self.first(name: name) || create(name: name)
@@ -7,7 +7,9 @@ class Product < Sequel::Model
 
   def to_json
     {
-        name: name
+      id: id,
+      name: name,
+      ean_code: ean_code
     }
   end
 end

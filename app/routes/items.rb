@@ -21,7 +21,7 @@ delete '/lists/:list_id/items/:item_id/?' do
 end
 
 post '/lists/:list_id/items/:item_id/bought/?' do
-  list = List[params[:list_id]]
+  list = List[params[:list_id].to_i]
   halt 404 unless list
 
   item = list.item params[:item_id].to_i
@@ -34,7 +34,7 @@ post '/lists/:list_id/items/:item_id/bought/?' do
 end
 
 delete '/lists/:list_id/items/:item_id/bought/?' do
-  list = List[params[:list_id]]
+  list = List[params[:list_id].to_i]
   halt 404 unless list
 
   item = list.item params[:item_id].to_i

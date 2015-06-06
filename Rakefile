@@ -11,4 +11,5 @@ namespace :db do
   task :migrate do
     Sequel::Migrator.run(database, 'database/migrations')
   end
+
 end

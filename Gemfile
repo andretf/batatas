@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.6'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
@@ -7,6 +7,7 @@ gem 'sequel'
 gem 'sinatra-sequel'
 gem 'pg'
 gem 'rake'
+gem 'unicorn'
 
 group :test do
   gem 'rspec'
@@ -20,6 +21,12 @@ group :development do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'terminal-notifier-guard'
+  gem 'web-console'
+end
+
+group :production do
+	gem 'rails_12factor'
+  gem 'byebug'
 end
 
 group :test, :development do
