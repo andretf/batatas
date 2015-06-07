@@ -26,8 +26,7 @@ class List < Sequel::Model
 
   private
   def from_json(item)
-    record = Product.find_or_create(:name => item['name'],
-                                    :ean_code => item['ean_code'])
+    record = Product.get_by_params(item['name'], item['ean_code'])
     options = {product_id: record[:id], amount: item['amount']}
     options[:bought] = item['bought'] if item['bought']
     options
