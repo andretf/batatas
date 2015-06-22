@@ -8,7 +8,8 @@ class User < Sequel::Model
     if user.nil?
       user = User.create(:id => params['id'], :name => params['name'])
     elsif user['name'] != params['name']
-      user = User.update(:name => params['name'])
+      User.update(:name => params['name'])
+      user['name'] = params['name']
     end
 
     user
