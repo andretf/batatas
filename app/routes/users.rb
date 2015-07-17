@@ -6,5 +6,6 @@ end
 
 post '/users/create/?' do
   params.merge!(JSON.parse(request.body.read))
-  json User.create_or_update(params).map(&:to_json)
+  status 201
+  json User.create_or_update(params).to_json
 end

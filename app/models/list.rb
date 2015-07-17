@@ -1,6 +1,6 @@
 class List < Sequel::Model
   one_to_many :items
-  one_to_many :list_users
+  one_to_many :sharings
 
   def add(items)
     items = [items].flatten

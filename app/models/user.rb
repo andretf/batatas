@@ -1,5 +1,5 @@
 class User < Sequel::Model
-  one_to_many :list_users
+  one_to_many :sharings
   unrestrict_primary_key
 
   def self.create_or_update(params)
@@ -8,8 +8,7 @@ class User < Sequel::Model
     if user.nil?
       user = User.create(:id => params['id'], :name => params['name'])
     elsif user['name'] != params['name']
-      User.update(:name => params['name'])
-      user['name'] = params['name']
+      user.update(:name => params['name'])
     end
 
     user
