@@ -1,10 +1,9 @@
 class List < Sequel::Model
   one_to_many :items
-  one_to_many :sharings
+  one_to_many :list_users
 
-  def add(items)
-    items = [items].flatten
-    items.each { |item| add_item(from_json(item)) }
+  def add (products)
+    [products].flatten.each { |product| add_item from_json(product) }
     save
   end
 
@@ -25,10 +24,16 @@ class List < Sequel::Model
   end
 
   private
-  def from_json(item)
-    record = Product.get_by_params(item['name'], item['ean_code'])
-    options = {product_id: record[:id], amount: item['amount']}
-    options[:bought] = item['bought'] if item['bought']
+
+  def from_json(product)
+    options = {
+      product_id: Product.find_or_create(:name => product['name'], :ean_code => product['ean_code'])[:id],
+      amount: product['amount']
+    }
+    options[:bought] = product['bought'] if product['bought']
+
     options
   end
 end
+
+

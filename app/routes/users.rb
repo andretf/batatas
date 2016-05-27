@@ -6,6 +6,11 @@ end
 
 post '/users/create/?' do
   params.merge!(JSON.parse(request.body.read))
-  status 201
-  json User.create_or_update(params).to_json
+
+  user = User[params['id']]
+  if user.nil?
+    user = User.create(:id => params['id'], :name => params['name'])
+  end
+
+  json user.to_json
 end

@@ -1,15 +1,15 @@
 class Product < Sequel::Model
   one_to_many :items
 
-  def self.get_by_params(name, ean_code)
-    Product.find_or_create(:name => name, :ean_code => ean_code)
+  def self.with_name name
+    self.first(name: name) || create(name: name)
   end
 
   def to_json
     {
-        id: id,
-        ean_code: ean_code,
-        name: name
+      id: id,
+      name: name,
+      ean_code: ean_code
     }
   end
 end

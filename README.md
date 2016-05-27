@@ -1,5 +1,3 @@
-Server for collaborative shopping lists.
+RESTful API for collaborative shopping lists manager.
 
-It was developed as a REST API.
-
-It's a fork of https://github.com/mpabegg/batatas.
+Use with client: https://github.com/andretf/batatas-android
