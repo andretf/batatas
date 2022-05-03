@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'sinatra', '2.0.2'
-gem 'sinatra-contrib', '2.0.2'
+gem 'sinatra', '2.2.0'
+gem 'sinatra-contrib', '2.2.0'
 gem 'sequel', '4.34.0'
 gem 'sinatra-sequel', '0.9.0'
 gem 'rake', '11.1.2'
